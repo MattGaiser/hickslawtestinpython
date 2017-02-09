@@ -1,0 +1,42 @@
+
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+{{ time }}
+<br />
+Seconds:  {{ timeformatted }}
+<br />
+{{ randomNum }}
+
+<p>Please select your preferred variety of pizza</p>
+<form action="contact" method="get">
+  <input type="radio" name="pizza"  id="pepperoni" value="pepperoni" checked> Pepperoni
+    <label for="pepperoni"><img src="https://cache.dominos.com/nolo/ca/en/02180/assets/build/market/CA/_en/images/img/products/thumbnails/S_PIZPX.jpg" alt="pizza" style="width:304px;height:228px;"></label> <br /> 
+  <input type="radio" name="pizza" id="meat" value="meat"> Meat Lovers
+    <label for="meat"><img src="https://cache.dominos.com/nolo/ca/en/02180/assets/build/market/CA/_en/images/img/products/thumbnails/S_PIZMX.jpg" alt="pizza" style="width:304px;height:228px;"></label><br /> 
+    
+    {% if pizza2 %}
+    {% include "pizza2.html" %}
+    {% endif %}
+
+    {% if pizza3 %}
+    {% include "pizza3.html" %}
+    {% endif %}
+    
+    {% if pizza4 %}
+    {% include "pizza4.html" %}
+    {% endif %}
+    
+    {% if pizza5 %}
+    {% include "pizza5.html" %}
+    {% endif %}
+
+  <input type="hidden" name="starttime" value="{{ timeformatted }}" />
+  <input type="hidden" name="nVal" value="{{ randomNum }}" />
+  <input type="submit" value="Chosen My Pizza!" />
+    
+</form> 
+
+
+{% endblock %}

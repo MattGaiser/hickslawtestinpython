@@ -1,0 +1,12 @@
+
+
+<h2>Thank you for participating in this test.</h2>
+<img src="http://i.imgur.com/jjQOcbW.png" alt="some_text" style="width:320;"> 
+ <h2>Some of the data is shown below. </h2>
+<br />
+{% for entry in entries.all %}
+
+<br />
+N: {{entry.numOfElements}} , seconds: {{entry.timetaken}}
+
+{% endfor %}
